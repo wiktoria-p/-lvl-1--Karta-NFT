@@ -12,6 +12,7 @@ $gapOfPriceAndTime: 10px;
 
 .home-page{
     min-height: 100vh;
+    background-color: var(--color-background);
 }
 .container{
     width: 413px;
@@ -60,6 +61,7 @@ $gapOfPriceAndTime: 10px;
     &__time{
         gap: $gapOfPriceAndTime;
         font-size: 16px;
+        color: var(--color-body);
 
         i{
             font-size: $fontSizeI;

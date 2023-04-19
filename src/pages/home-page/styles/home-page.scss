@@ -1,6 +1,7 @@
 @use '../../../global-styles/styles/fonts.scss';
 @use '../../../global-styles/styles/normalize.scss';
 @use '../../../global-styles/styles/root.scss';
+@use "../../../global-styles/style.scss";
 
 $fontSizeI: 20px;
 $fontSizeMediaI :16px;
@@ -10,165 +11,171 @@ $gapOfPriceAndTime: 10px;
 
 
 .home-page{
-    &_container{
-        width: 413px;
-        background-color: var(--color-box);
-        background-image: url(public/images/Frame\ 1000003598.png);
-        background-repeat: no-repeat;
-        background-position: center 0;
-        border-radius: 20px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0 32px;
+    min-height: 100vh;
+}
+.container{
+    width: 413px;
+    background-color: var(--color-box);
+    background-image: url(../../../../public/images/Frame\ 1000003598.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 32px;
 
-        &_title{
-            width: 278px;
-            gap: 24px;
-            font-size: 18px;
-            margin-top: 252px;
+    &__title{
+        width: 278px;
+        gap: 24px;
+        font-size: 18px;
+        margin-top: 252px;
 
-            h1{
-                color: var(--color-title);
-                font-size: 24px;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                text-overflow: ellipsis;
-            }
+        h1{
+            color: var(--color-title);
+            font-size: 24px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
         }
+    }
 
-        &_subscription-details{
-            margin-top: 40px;
-            height: 26px;
+    &__subscription-details{
+        margin-top: 40px;
+        height: 26px;
+    }
 
-            &_price{
-                color: var(--color-primary);
-                gap: $gapOfPriceAndTime;
-                font-size: 18px;
+    &__price{
+        color: var(--color-primary);
+        gap: $gapOfPriceAndTime;
+        font-size: 18px;
     
-                i{
-                    font-size: $fontSizeI;
-                }
-            }
+        i{
+            font-size: $fontSizeI;
+        }
+    }
             
-            &_time{
-                gap: $gapOfPriceAndTime;
-                font-size: 16px;
+    &__time{
+        gap: $gapOfPriceAndTime;
+        font-size: 16px;
 
-                i{
-                    font-size: $fontSizeI;
-                }
-            }
-        }
-
-        &_creator{
-            padding: 24px 0 24px;
-            border-top: 2px solid var(--color-stroke);
-            margin-top: 32px;
-            gap: 16px;
-
-            img{
-                width: $imgSize;
-                height: $imgSize;
-            }
-
-            &_creator-name{
-                gap: 5px;
-                padding-top: 7px;
-                
-              &_name{
-                color: var(--color-title);  
-              }
-            }
-        }
-    }
-
-    @media screen and (max-width: 1024px) {
-        &_container{
-            width: 343px;
-            padding: 0 24px;
-
-            &_title{
-                width: 251px;
-                gap: 16px;
-                margin-top: 229px;
-            }
-
-            &_subscription-details{
-                margin-top: 24px;
-    
-                &_price{
-                    font-size: 16px;
-                    i{
-                        font-size: $fontSizeMediaI;
-                    }
-                }
-                
-                &_time{
-                    font-size: 14px;
-    
-                    i{
-                        font-size: $fontSizeMediaI;
-                    }
-                }
-            }
-
-            &_creator{
-                padding: 20px 0 20px;
-                margin-top: 20px;
-    
-                &_creator-name{
-                    padding-top: 9px;
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 280px) {
-        &_container{
-            width: 250px;
-            padding: 0 20px;
-
-            &_title{
-                width: 160px;
-                gap: 10px;
-                font-size: 10px;
-    
-                h1{
-                    font-size: 16px;
-                }
-            }
-    
-            &_subscription-details{
-                margin-top: 20px;
-                height: 18px;
-    
-                &_price{
-                    font-size: 12px;
-                }
-                
-                &_time{
-                    font-size: 10px;
-                }
-            }
-    
-            &_creator{
-                gap: 8px;
-    
-                img{
-                    width: $imgSizeMedia;
-                    height: $imgSizeMedia;
-                }
-    
-                &_creator-name{
-                    padding-top: 7px;
-                    font-size: 12px;
-                }
-            }
+        i{
+            font-size: $fontSizeI;
         }
     }
 }
+
+.creator{
+    padding: 24px 0 24px;
+    border-top: 2px solid var(--color-stroke);
+    margin-top: 32px;
+    gap: 16px;
+
+    img{
+        width: $imgSize;
+        height: $imgSize;
+    }
+
+    &__creator-name{
+        gap: 5px;
+        padding-top: 7px;
+    }
+                
+    &__name{
+        color: var(--color-title);  
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+   .container{
+        width: 343px;
+        padding: 0 24px;
+
+        &__title{
+            width: 251px;
+            gap: 16px;
+            margin-top: 229px;
+        }
+
+        &__subscription-details{
+            margin-top: 24px;
+        }
+    
+        &__price{
+            font-size: 16px;
+            
+            i{
+                font-size: $fontSizeMediaI;
+            }
+        }
+                
+        &__time{
+            font-size: 14px;
+    
+            i{
+                font-size: $fontSizeMediaI;
+            }
+        }
+    }
+
+    .creator{
+        padding: 20px 0 20px;
+        margin-top: 20px;
+    
+        &__creator-name{
+            padding-top: 9px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 280px) {
+.container{
+    width: 250px;
+    padding: 0 20px;
+
+    &__title{
+        width: 160px;
+        gap: 10px;
+        font-size: 10px;
+    
+        h1{
+            font-size: 16px;
+        }
+    }
+    
+    &__subscription-details{
+        margin-top: 20px;
+        height: 18px;
+    }
+    
+    &__price{
+        font-size: 12px;
+    }
+                
+    &__time{
+        font-size: 10px;
+    }
+            
+    .creator{
+       gap: 8px;
+    
+        img{
+            width: $imgSizeMedia;
+            height: $imgSizeMedia;
+        }
+    
+        &__creator-name{
+            padding-top: 7px;
+            font-size: 12px;
+        }
+    }
+}
+}
+    
+
 
